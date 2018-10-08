@@ -1,0 +1,18 @@
+html
+    body
+        table
+            tr
+                th Name
+                th Role
+                th Email
+                th Gender
+                th Age
+            each user, index in users
+                tr
+                    td #{user.name}
+                    td #{user.role}
+                    td #{user.email}
+                    td #{user.gender}
+                    td #{user.age}
+        div
+            a(href="/") Return

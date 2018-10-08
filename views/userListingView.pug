@@ -1,0 +1,28 @@
+html
+    head
+        script(src="/script/userListingView.js" defer)
+    body
+        div(class="menuBar")
+            a(href="/newUser") Add User
+            form(id="testForm" action="/search", method="post")
+                input(id="test" placeholder="Search" type="text" name="searchInput")
+        div(class="container")
+            table
+                tr
+                    th age
+                    th name
+                    th gender
+                    th email
+                    th role
+                each user, index in users
+                    tr
+                        td #{user.age}
+                        td #{user.name}
+                        td #{user.gender}
+                        td #{user.email}
+                        td #{user.role}
+                        td
+                            a(href=`/updateUser/${user._id}`) Edit
+                            |
+                            |
+                            a(href=`/removeUser/${user._id}`) Delete

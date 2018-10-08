@@ -1,0 +1,36 @@
+html
+    body
+        div
+            table
+                tr
+                    th Name
+                    th Role
+                    th Email
+                    th Gender
+                    th Age
+                each user, index in users
+                    tr
+                        td #{user.name}
+                        td #{user.role}
+                        td #{user.email}
+                        td #{user.gender}
+                        td #{user.age}
+                            |
+                            |
+                            a(href=`/updateUser/${user._id}`) Edit
+                            |
+                            |
+                            a(href=`/removeUser/${user._id}`) Delete
+            div
+                a(href="/add") New User
+            div
+                a(href="/sortingAtoZ") Sort Names A-Z
+            div
+                a(href="/sortingZtoA") Sort Names Z-A
+            div
+                form(action='/searchUser' method="post")
+                    td
+                        input(placeholder="Search" type="text" name="search")
+                    td
+                        input(type="submit" value="Search")
+

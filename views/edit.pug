@@ -1,0 +1,26 @@
+html
+    head
+    body
+        table
+            tr
+                th Name
+                th Role
+                th Email
+                th Gender
+                th Age
+            tr
+                form(action=`/updateUser/${user._id}` method="post")
+                    td
+                        input(placeholder="Name" type="text" name="name" value=`${user.name}`)
+                    td
+                        input(placeholder="Role" type="text" name="role" value=`${user.role}`)
+                    td
+                        input(placeholder="Email" type="email" name="email" value=`${user.email}`)
+                    td
+                        input(placeholder="Gender" type="text" name="gender" value=`${user.gender}`)
+                    td
+                        input(placeholder="Age" type="number" name="age" value=`${user.age}`)
+                    td
+                        input(placeholder="Save" type="submit")
+        a(href="/") Cancel
+
