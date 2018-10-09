@@ -140,7 +140,7 @@ app.get('/removeUser/:clientId', (req, res) => {
 app.post('/searchUser', (req, res) => {
     const body = req.body;
     // console.log(body);
-    user.find({ $text:{$searchUsers: body.search} }, (err, data) => {
+    user.find({ $text:{$search: body.search} }, (err, data) => {
         if (err) return console.log(`Oops! ${err}`);
 
         res.render('searchUser', {users: data});
